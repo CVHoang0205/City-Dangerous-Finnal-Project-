@@ -61,7 +61,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\Script\Player.cs" />
+    <Compile Include="Assets\Resources\Script\CharacterRange.cs" />
+    <Compile Include="Assets\Resources\Script\Common\AbtractCharacter.cs" />
+    <Compile Include="Assets\Resources\Script\StateMachine\IdleState.cs" />
+    <Compile Include="Assets\Resources\Script\Bullet.cs" />
+    <Compile Include="Assets\Resources\Script\Character.cs" />
+    <Compile Include="Assets\Resources\Script\StateMachine\AttackState.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Resources\Script\Bot.cs" />
+    <Compile Include="Assets\Resources\Script\GameController.cs" />
+    <Compile Include="Assets\Resources\Script\CameraFollow.cs" />
+    <Compile Include="Assets\Resources\Script\Common\Singleton.cs" />
+    <Compile Include="Assets\Resources\Script\StateMachine\RunningState.cs" />
+    <Compile Include="Assets\Resources\Script\StateMachine\IState.cs" />
     <Compile Include="Assets\Enviroment\MoveStopMove\JoystickPack\Scripts\JoystickControl.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -899,6 +911,10 @@
       <Project>{4B43539E-4A53-E74C-2B12-252D95AA52F2}</Project>
       <Name>Unity.Notifications</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{A7324C6B-47C4-2826-D33A-7863B3064703}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{95305516-A0B5-FBEA-7DAD-306CBB7BD468}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
@@ -979,6 +995,10 @@
       <Project>{B9FB0B90-2D22-326E-9BCF-BD859A527D89}</Project>
       <Name>Unity.Subsystem.Registration</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
+      <Project>{4D58FA6E-3AF6-B9F1-3BA0-B7446EA4DB59}</Project>
+      <Name>Unity.AI.Navigation.Updater</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mobile.AndroidLogcat.Editor.csproj">
       <Project>{CFF02FC5-FB3B-5517-34F7-3DDF0180DA03}</Project>
       <Name>Unity.Mobile.AndroidLogcat.Editor</Name>
@@ -999,6 +1019,10 @@
       <Project>{0B42EA03-6B5F-A5D5-217B-BEE5D0D87950}</Project>
       <Name>Unity.AdaptivePerformance.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{65B990B7-154E-8FEA-B2FB-8EBAE7AE9C93}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{2FB88CA1-37A4-36F9-D999-BFCE68084400}</Project>
       <Name>Unity.VisualScripting.State</Name>
@@ -1010,6 +1034,10 @@
     <ProjectReference Include="Unity.Notifications.Android.csproj">
       <Project>{8234A329-1060-8AFE-60C3-F2D8BF85163C}</Project>
       <Name>Unity.Notifications.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
+      <Project>{E5463480-3E9B-84EF-0621-1958DC67B5D0}</Project>
+      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Profiling.Core.csproj">
       <Project>{A3CB1D43-F1CA-71B4-1CAC-9628B2304271}</Project>
