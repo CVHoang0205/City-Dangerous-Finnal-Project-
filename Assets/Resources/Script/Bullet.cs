@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public Character self;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Char") && other.GetComponent<Character>() != self)
+        {
+            other.GetComponent<Character>().OnDeath();
+            Destroy(gameObject);
+        }
     }
 }

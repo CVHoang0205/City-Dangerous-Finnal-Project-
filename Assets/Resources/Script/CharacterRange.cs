@@ -22,7 +22,7 @@ public class CharacterRange : MonoBehaviour
         }
     }
 
-    public Transform GetNearestTargeet() 
+    public Transform GetNearestTarget() 
     {
         float distanceMin = float.MaxValue;
         int index = 0;
@@ -40,7 +40,7 @@ public class CharacterRange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Boss")) 
+        if (other.gameObject.CompareTag("Char")) 
         {
             Debug.Log("Boss in ranger");
             charsInCircle.Add(other.GetComponent<Character>());
@@ -49,6 +49,10 @@ public class CharacterRange : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        charsInCircle.Remove(other.GetComponent<Character>());
+        if (other.gameObject.CompareTag("Char"))
+        {
+            Debug.Log("Remove Boss in ranger");
+            charsInCircle.Remove(other.GetComponent<Character>());
+        }
     }
 }

@@ -25,6 +25,34 @@ public class Bot : Character
         }
     }
 
+    public override void OnInit()
+    {
+        ChangeState(new IdleState());
+        base.OnInit();
+    }
+
+    public override void OnAttack()
+    {
+        base.OnAttack();
+    }
+
+    public override void OnDeath()
+    {
+        ChangeState(null);
+        agent.enabled = false;
+        base.OnDeath();
+    }
+
+    public void ChangeIsAttackBot()
+    {
+        Invoke(nameof(ResetAttack), 1.5f);
+    }
+
+    private void ResetAttack()
+    {
+        isAttack = false;
+    }
+
     public void ChangeState(IState<Bot> newState)
     {
         if (currentState != null)

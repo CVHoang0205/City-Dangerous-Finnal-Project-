@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : AbtractCharacter
 {
     public Animator animator;
     public string currentAnimName = "idle";
     public CharacterRange range;
-    public Bullet BulletPrefabs;
+    public bool isAttack = false;
+    public bool isDeath = false;
+
+    public Bullet bulletPrefabs;
 
     //public Transform mesh;
 
@@ -21,6 +24,22 @@ public class Character : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public override void OnInit()
+    {
+        
+    }
+
+    public override void OnAttack()
+    {
+        Throw();
+    }
+
+    public override void OnDeath()
+    {
+        isDeath = true;
+        ChangeAnim("dead");
     }
 
     public void ChangeAnim(string animName)
@@ -38,10 +57,14 @@ public class Character : MonoBehaviour
         range.RemoveNullTarget();
         if (range.charsInCircle.Count > 0) 
         {
-            Debug.Log("aaa");
-            Bullet bullet = Instantiate(BulletPrefabs);
-            Vector3 direction = (range.GetNearestTargeet().position - transform.position).normalized;
+            Bullet bullet = Instantiate(bulletPrefabs);
+            bullet.transform.position = transform.position;
+            //bullet.transform.position = transform.position + Vector3.up * 1;
+            bullet.self = this;
+            Vector3 direction = (range.GetNearestTarget().position - transform.position).normalized;
+            bullet.transform.forward = direction;
             bullet.GetComponent<Rigidbody>().AddForce(300f * direction);
+            transform.forward = direction;
         }
     }
 }

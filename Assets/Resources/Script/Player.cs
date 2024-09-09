@@ -10,7 +10,7 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
-        ChangeAnim("idle");
+        OnInit();
     }
 
     // Update is called once per frame
@@ -23,11 +23,35 @@ public class Player : Character
             transform.forward = JoystickControl.direct;
             ChangeAnim("run");
         }
-        else
+        else if(!isAttack)
         {
             ChangeAnim("idle");
-            Throw();
+            range.RemoveNullTarget();
+            if(range.charsInCircle.Count > 0)
+            {
+                AttackTarget();
+            }
         }
+    }
+
+    public override void OnInit()
+    {
+        isDeath = false;
+        ChangeAnim("idle");
+        base.OnInit();
+    }
+
+    public void AttackTarget()
+    {
+        isAttack = true;
+        Invoke(nameof(ChangeIsAttack), 1.5f);
+        ChangeAnim("attack");
+        OnAttack();
+    }
+
+    public void ChangeIsAttack()
+    {
+        isAttack = false; 
     }
 
     private bool CheckGround(Vector3 points)

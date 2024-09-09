@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2359521745104987660}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Boss
+  m_TagString: Char
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,10 @@ MonoBehaviour:
   animator: {fileID: 8639253434637646459}
   currentAnimName: idle
   range: {fileID: 1863363719711013490}
+  isAttack: 0
+  isDeath: 0
+  bulletPrefabs: {fileID: 8621533181051524892, guid: 5676b2c4d42fcc34cae1566cf31e6948,
+    type: 3}
   agent: {fileID: 2359521745104987660}
   destination: {x: 0, y: 0, z: 0}
 --- !u!195 &2359521745104987660

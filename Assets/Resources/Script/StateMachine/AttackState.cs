@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class AttackState : IState<Bot>
 {
-    public void OnEnter(Bot t)
+    float timer = 0f;
+    public void OnEnter(Bot bot)
     {
-        
+        bot.ChangeAnim("attack");
+        bot.isAttack = true;
+        bot.ChangeIsAttackBot();
     }
 
-    public void OnExecute(Bot t)
+    public void OnExecute(Bot bot)
     {
-        
+        timer += Time.deltaTime;
+        if(timer > 0.5f)
+        {
+            bot.range.RemoveNullTarget();
+            if(bot.range.charsInCircle.Count > 0)
+            {
+                bot.OnAttack();
+            }
+            bot.ChangeState(new IdleState());
+        }
     }
 
-    public void OnExit(Bot t)
+    public void OnExit(Bot bot)
     {
         
     }
