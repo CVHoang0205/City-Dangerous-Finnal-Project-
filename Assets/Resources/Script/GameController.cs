@@ -9,6 +9,8 @@ public class GameController : Singleton<GameController>
     public Player player;
     public Bot botPrefabs;
     public int botNumber = 10;
+    public Canvas indicatorCanvas;
+    public TargetIndicator indicator;
     public TextMeshProUGUI aliveText;
     public List<Bot> botInStage = new List<Bot>();
 

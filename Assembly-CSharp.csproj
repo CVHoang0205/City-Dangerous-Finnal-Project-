@@ -69,7 +69,9 @@
     <Compile Include="Assets\Resources\Script\StateMachine\AttackState.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Resources\Script\Bot.cs" />
+    <Compile Include="Assets\Resources\Script\Common\Constant.cs" />
     <Compile Include="Assets\Resources\Script\GameController.cs" />
+    <Compile Include="Assets\Resources\Script\TargetIndicator.cs" />
     <Compile Include="Assets\Resources\Script\CameraFollow.cs" />
     <Compile Include="Assets\Resources\Script\Common\Singleton.cs" />
     <Compile Include="Assets\Resources\Script\StateMachine\RunningState.cs" />
