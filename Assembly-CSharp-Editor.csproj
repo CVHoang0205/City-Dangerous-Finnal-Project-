@@ -1116,10 +1116,6 @@
       <Project>{33C7FEC4-8E04-37AF-2E40-01D73DF0D209}</Project>
       <Name>Unity.AdaptivePerformance.Profiler.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{231CB967-BF6C-4B25-2A0C-CBB4798C1FDB}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj">
       <Project>{FE44AC71-7C18-B94D-C95F-7288D0A35523}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
@@ -1131,6 +1127,10 @@
     <ProjectReference Include="Unity.AdaptivePerformance.Simulator.Editor.csproj">
       <Project>{2199BA69-DE89-2D04-AEE4-001934B298B8}</Project>
       <Name>Unity.AdaptivePerformance.Simulator.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{231CB967-BF6C-4B25-2A0C-CBB4798C1FDB}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.UI.Editor.csproj">
       <Project>{69FE9EDC-D1E5-3FD6-BA0F-FAAC4E408234}</Project>
@@ -1188,17 +1188,17 @@
       <Project>{2FB88CA1-37A4-36F9-D999-BFCE68084400}</Project>
       <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{9191A3DC-5615-C1EB-5456-188522794B84}</Project>
-      <Name>Unity.VSCode.Editor</Name>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
+      <Project>{E5463480-3E9B-84EF-0621-1958DC67B5D0}</Project>
+      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Notifications.Android.csproj">
       <Project>{8234A329-1060-8AFE-60C3-F2D8BF85163C}</Project>
       <Name>Unity.Notifications.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
-      <Project>{E5463480-3E9B-84EF-0621-1958DC67B5D0}</Project>
-      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{9191A3DC-5615-C1EB-5456-188522794B84}</Project>
+      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Profiling.Core.csproj">
       <Project>{A3CB1D43-F1CA-71B4-1CAC-9628B2304271}</Project>
