@@ -26,6 +26,7 @@ public class Player : Character
         else
         {
             ChangeAnim("idle");
+            Throw();
         }
     }
 

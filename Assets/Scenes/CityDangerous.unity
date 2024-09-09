@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c1a6db3fc825c4bbb32aaeab639ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charsInCircle: []
 --- !u!212 &146796083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -808,7 +809,7 @@ GameObject:
   - component: {fileID: 1132543323}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -899,6 +900,8 @@ MonoBehaviour:
   animator: {fileID: 868393788}
   currentAnimName: idle
   range: {fileID: 146796082}
+  BulletPrefabs: {fileID: 8621533181051524892, guid: 5676b2c4d42fcc34cae1566cf31e6948,
+    type: 3}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -931,7 +934,7 @@ GameObject:
   - component: {fileID: 1144727559}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
