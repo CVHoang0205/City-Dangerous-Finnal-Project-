@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2359521745104987660}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c1a6db3fc825c4bbb32aaeab639ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charsInCircle: []
 --- !u!135 &2110645428568708742
 SphereCollider:
   m_ObjectHideFlags: 0

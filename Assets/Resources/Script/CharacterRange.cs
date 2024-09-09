@@ -37,4 +37,18 @@ public class CharacterRange : MonoBehaviour
         }
         return charsInCircle[index].transform;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Boss")) 
+        {
+            Debug.Log("Boss in ranger");
+            charsInCircle.Add(other.GetComponent<Character>());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        charsInCircle.Remove(other.GetComponent<Character>());
+    }
 }
