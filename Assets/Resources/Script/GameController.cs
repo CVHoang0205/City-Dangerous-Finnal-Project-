@@ -2,23 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController> 
 {
     public Player player;
     public Bot botPrefabs;
     public int botNumber = 10;
-    public List<Bot> botInStage = new List<Bot>();  
+    public TextMeshProUGUI aliveText;
+    public List<Bot> botInStage = new List<Bot>();
+
+    private int totalCharacter = 0;
     // Start is called before the first frame update
     void Start()
     {
         SetUpCharacterInGame();
+        totalCharacter = botInStage.Count + 1;
+        InitTextAlive();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void InitTextAlive()
+    {
+        aliveText.text = "Alive: " + totalCharacter;
+    }
+
+    public void CharacterDead()
+    {
+        totalCharacter--;
+        aliveText.text = "Alive: " + totalCharacter;
+        if(totalCharacter == 1)
+        {
+            Debug.Log("Win");
+        }
     }
 
     private void SetUpCharacterInGame()

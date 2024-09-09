@@ -40,7 +40,15 @@ public class Bot : Character
     {
         ChangeState(null);
         agent.enabled = false;
+        GameController.Instance.botInStage.Remove(this);    
         base.OnDeath();
+        StartCoroutine(DestroyBot());
+    }
+
+    IEnumerator DestroyBot()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 
     public void ChangeIsAttackBot()

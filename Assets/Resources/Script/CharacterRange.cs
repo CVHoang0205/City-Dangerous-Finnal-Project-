@@ -42,7 +42,6 @@ public class CharacterRange : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Char")) 
         {
-            Debug.Log("Boss in ranger");
             charsInCircle.Add(other.GetComponent<Character>());
         }
     }
@@ -51,7 +50,6 @@ public class CharacterRange : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Char"))
         {
-            Debug.Log("Remove Boss in ranger");
             charsInCircle.Remove(other.GetComponent<Character>());
         }
     }

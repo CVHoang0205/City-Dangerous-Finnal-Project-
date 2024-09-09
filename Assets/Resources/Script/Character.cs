@@ -38,8 +38,10 @@ public class Character : AbtractCharacter
 
     public override void OnDeath()
     {
+        GameController.Instance.CharacterDead();
         isDeath = true;
         ChangeAnim("dead");
+        gameObject.tag = "Untagged";
     }
 
     public void ChangeAnim(string animName)
