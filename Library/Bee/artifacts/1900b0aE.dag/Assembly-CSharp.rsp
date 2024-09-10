@@ -380,6 +380,7 @@
 "Assets/Resources/Script/StateMachine/IState.cs"
 "Assets/Resources/Script/StateMachine/RunningState.cs"
 "Assets/Resources/Script/TargetIndicator.cs"
+"Assets/Resources/Script/UI/UIManager.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 /deterministic

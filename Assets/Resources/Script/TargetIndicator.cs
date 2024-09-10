@@ -12,7 +12,7 @@ public class TargetIndicator : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Camera Camera => CameraFollow.Instance.gameCamera;
 
-    private float indicatorY = 3f;
+    private float indicatorY = 1f;
 
     Vector3 viewPoint;
     Vector3 screenHalf = new Vector2(Screen.width, Screen.height) / 2;
@@ -39,6 +39,6 @@ public class TargetIndicator : MonoBehaviour
     public void InitTarget(int level)
     {
         levelText.text = level.ToString();
-        indicatorY = 3f + level * 0.3f;
+        indicatorY = 1f + level * 0.3f;
     }
 }

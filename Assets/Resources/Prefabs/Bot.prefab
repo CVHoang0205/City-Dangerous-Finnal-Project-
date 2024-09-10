@@ -126,6 +126,8 @@ MonoBehaviour:
   range: {fileID: 1863363719711013490}
   isAttack: 0
   isDeath: 0
+  indicator: {fileID: 0}
+  level: 1
   bulletPrefabs: {fileID: 8621533181051524892, guid: 5676b2c4d42fcc34cae1566cf31e6948,
     type: 3}
   agent: {fileID: 2359521745104987660}

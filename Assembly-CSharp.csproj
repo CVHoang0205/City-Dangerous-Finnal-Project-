@@ -74,6 +74,7 @@
     <Compile Include="Assets\Resources\Script\TargetIndicator.cs" />
     <Compile Include="Assets\Resources\Script\CameraFollow.cs" />
     <Compile Include="Assets\Resources\Script\Common\Singleton.cs" />
+    <Compile Include="Assets\Resources\Script\UI\UIManager.cs" />
     <Compile Include="Assets\Resources\Script\StateMachine\RunningState.cs" />
     <Compile Include="Assets\Resources\Script\StateMachine\IState.cs" />
     <Compile Include="Assets\Resources\Script\CounterTime.cs" />

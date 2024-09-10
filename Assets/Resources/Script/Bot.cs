@@ -48,6 +48,7 @@ public class Bot : Character
     IEnumerator DestroyBot()
     {
         yield return new WaitForSeconds(2f);
+        Destroy(indicator.gameObject);
         Destroy(gameObject);
     }
 

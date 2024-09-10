@@ -9,6 +9,8 @@ public class Character : AbtractCharacter
     public CharacterRange range;
     public bool isAttack = false;
     public bool isDeath = false;
+    public TargetIndicator indicator;
+    public int level = 1;
 
     public Bullet bulletPrefabs;
 
@@ -17,7 +19,7 @@ public class Character : AbtractCharacter
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnInit();   
     }
 
     // Update is called once per frame
@@ -28,7 +30,8 @@ public class Character : AbtractCharacter
 
     public override void OnInit()
     {
-        
+        level = 1;
+        indicator.InitTarget(level);
     }
 
     public override void OnAttack()

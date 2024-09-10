@@ -42,8 +42,11 @@ public class Player : Character
 
     public override void OnInit()
     {
+        this.enabled = true;    
         isDeath = false;
+        gameObject.tag = "Char";
         ChangeAnim("idle");
+        indicator.InitTarget(Color.black, 1, "Player");
         base.OnInit();
     }
 

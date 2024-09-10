@@ -18,6 +18,10 @@ public class GameController : Singleton<GameController>
     // Start is called before the first frame update
     void Start()
     {
+        TargetIndicator playerIndicator = Instantiate(indicator, indicatorCanvas.transform);
+        player.indicator = playerIndicator;
+        playerIndicator.character = player;
+
         SetUpCharacterInGame();
         totalCharacter = botInStage.Count + 1;
         InitTextAlive();
@@ -46,6 +50,7 @@ public class GameController : Singleton<GameController>
 
     private void SetUpCharacterInGame()
     {
+        player.OnInit();
         for(int i = 0; i < botNumber; i++)
         {
             NavMeshHit hit;
@@ -53,8 +58,20 @@ public class GameController : Singleton<GameController>
             if(NavMesh.SamplePosition(point, out hit, 2.0f, NavMesh.AllAreas))
             {
                 Bot bot = Instantiate(botPrefabs, hit.position, Quaternion.identity);
+                TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
+                bot.indicator = botIndicator;
+                botIndicator.character = bot;
                 botInStage.Add(bot);
+                Color color = Random.ColorHSV();
+                string botName = GetRandomCharacterNames();
+                botIndicator.InitTarget(color, 1, botName);
             }
         }
+    }
+
+    private string GetRandomCharacterNames()
+    {
+        int index = Random.Range(0, Constant.characterNames.Count);
+        return Constant.characterNames[index];
     }
 }
