@@ -31,6 +31,7 @@ public class Character : AbtractCharacter
     public override void OnInit()
     {
         level = 1;
+        SetBodyScale();
         indicator.InitTarget(level);
     }
 
@@ -45,6 +46,21 @@ public class Character : AbtractCharacter
         isDeath = true;
         ChangeAnim("dead");
         gameObject.tag = "Untagged";
+    }
+
+    public void SetBodyScale()
+    {
+        transform.localScale = (1 + (level - 1) * 0.1f) * Vector3.one;
+    }
+
+    public void GainLevel()
+    {
+        if (!isDeath)
+        {
+            level++;
+            SetBodyScale();
+            indicator.InitTarget(level);
+        }
     }
 
     public void ChangeAnim(string animName)

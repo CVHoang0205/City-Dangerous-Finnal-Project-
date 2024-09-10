@@ -13,6 +13,7 @@ public class GameController : Singleton<GameController>
     public TargetIndicator indicator;
     public TextMeshProUGUI aliveText;
     public List<Bot> botInStage = new List<Bot>();
+    public int gold;
 
     private int totalCharacter = 0;
     // Start is called before the first frame update
