@@ -63,6 +63,7 @@
     <Compile Include="Assets\Resources\Script\Player.cs" />
     <Compile Include="Assets\Resources\Script\CharacterRange.cs" />
     <Compile Include="Assets\Resources\Script\Common\AbtractCharacter.cs" />
+    <Compile Include="Assets\Resources\Script\UI\Award.cs" />
     <Compile Include="Assets\Resources\Script\StateMachine\IdleState.cs" />
     <Compile Include="Assets\Resources\Script\Bullet.cs" />
     <Compile Include="Assets\Resources\Script\Character.cs" />

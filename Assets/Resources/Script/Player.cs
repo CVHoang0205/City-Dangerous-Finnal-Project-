@@ -66,7 +66,9 @@ public class Player : Character
     public override void OnDeath()
     {
         counter.Cancel();
+        GameController.Instance.EndGame();  
         this.enabled = false;
+        UIManager.Instance.OpenAwardUI(level);
         base.OnDeath();
     }
 

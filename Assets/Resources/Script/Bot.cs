@@ -13,7 +13,7 @@ public class Bot : Character
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(new IdleState());
+        ChangeAnim("idle");
     }
 
     // Update is called once per frame

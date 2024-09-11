@@ -26,12 +26,67 @@ public class GameController : Singleton<GameController>
         SetUpCharacterInGame();
         totalCharacter = botInStage.Count + 1;
         InitTextAlive();
+        InitGold();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void StartGame()
+    {
+        totalCharacter = botInStage.Count + 1;
+        InitTextAlive();
+        for (int i = 0; i < botInStage.Count; i++)
+        {
+            botInStage[i].OnInit(); 
+        }
+    }
+
+    public void ReplayGame()
+    {
+        DeleteAllBots();
+        player.OnDespawn();
+        SetUpCharacterInGame();
+    }
+
+    public void InitGold()
+    {
+        if (!PlayerPrefs.HasKey("Gold"))
+        {
+            gold = 0;
+            PlayerPrefs.SetInt("Gold", 0);
+        }
+        else
+        {
+            gold = PlayerPrefs.GetInt("Gold");
+        }
+    }
+
+    public void GainGold(int num)
+    {
+        gold += num;
+        PlayerPrefs.SetInt("Gold", gold);
+        UIManager.Instance.InitGold();
+    }
+
+    public void ReduceGold(int num)
+    {
+        gold -= num;
+        PlayerPrefs.SetInt("Gold", gold);
+        UIManager.Instance.InitGold();
+    }
+
+    public void DeleteAllBots()
+    {
+        for(int i = 0; i < botInStage.Count; i++)
+        {
+            Destroy(botInStage[i].indicator.gameObject);
+            Destroy(botInStage[i].gameObject);
+        }
+        botInStage.Clear(); 
     }
 
     public void InitTextAlive()
@@ -45,7 +100,7 @@ public class GameController : Singleton<GameController>
         aliveText.text = "Alive: " + totalCharacter;
         if(totalCharacter == 1)
         {
-            Debug.Log("Win");
+            UIManager.Instance.OpenAwardUI(player.level);
         }
     }
 
@@ -74,5 +129,11 @@ public class GameController : Singleton<GameController>
     {
         int index = Random.Range(0, Constant.characterNames.Count);
         return Constant.characterNames[index];
+    }
+
+    public void EndGame()
+    {
+        JoystickControl.direct = Vector3.zero;
+        JoystickControl.Instance.gameObject.SetActive(false);
     }
 }

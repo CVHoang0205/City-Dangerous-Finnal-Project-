@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JoystickControl : MonoBehaviour
+public class JoystickControl : Singleton<JoystickControl>   
 {
     public static Vector3 direct;
 
