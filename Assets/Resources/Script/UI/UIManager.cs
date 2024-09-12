@@ -11,11 +11,13 @@ public class UIManager : Singleton<UIManager>
     public GameObject settingInGamePanel;
     public GameObject indicatorPanel;
     public GameObject awardPanel;
+    public GameObject shopPanel;
 
     public Button playGame;
     public Button settingInGameBtn;
     public Button home;
     public Button quitSetting;
+    public Button shopButton;
 
     public JoystickControl joystick;
     public TextMeshProUGUI goldText;
@@ -29,6 +31,7 @@ public class UIManager : Singleton<UIManager>
         settingInGameBtn.onClick.AddListener(() => { settingInGamePanel.SetActive(true); });
         home.onClick.AddListener(() => HomeClick());
         quitSetting.onClick.AddListener(() => { settingInGamePanel.SetActive(false); });
+        shopButton.onClick.AddListener(() => OpenShop());
     }
 
     public void HomeClick()
@@ -37,6 +40,12 @@ public class UIManager : Singleton<UIManager>
         settingInGamePanel.SetActive(false);
         InitGameState(1);
         GameController.Instance.ReplayGame();   
+    }
+
+    public void OpenShop()
+    {
+        mainPanel.SetActive(false);
+        shopPanel.SetActive(true);
     }
 
     public void OpenAwardUI(int gold)
