@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 612782715573536519}
   - component: {fileID: 3906781338615414958}
   - component: {fileID: 2359521745104987660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bot
   m_TagString: Char
   m_Icon: {fileID: 0}
@@ -128,8 +128,7 @@ MonoBehaviour:
   isDeath: 0
   indicator: {fileID: 0}
   level: 1
-  bulletPrefabs: {fileID: 8621533181051524892, guid: 5676b2c4d42fcc34cae1566cf31e6948,
-    type: 3}
+  skin: {fileID: 7127363068512388210}
   agent: {fileID: 2359521745104987660}
   destination: {x: 0, y: 0, z: 0}
 --- !u!195 &2359521745104987660
@@ -353,6 +352,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7981905156220006899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7127363068512388210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8346271262616488575, guid: a321e32e1c284d447970306c3d83d8f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7981905156220006899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43478eb048cd59540a790b01dd7afe63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8639253434637646459 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1810912465668295560, guid: a321e32e1c284d447970306c3d83d8f6,

@@ -11,10 +11,9 @@ public class Character : AbtractCharacter
     public bool isDeath = false;
     public TargetIndicator indicator;
     public int level = 1;
+    public InitSkin skin;
 
-    public Bullet bulletPrefabs;
-
-    //public Transform mesh;
+    private Bullet bulletPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +32,7 @@ public class Character : AbtractCharacter
         level = 1;
         SetBodyScale();
         indicator.InitTarget(level);
+        bulletPrefabs = ItemDatabase.Instance.bullets[skin.weaponId];
     }
 
     public override void OnAttack()
@@ -86,6 +86,12 @@ public class Character : AbtractCharacter
             bullet.transform.forward = direction;
             bullet.GetComponent<Rigidbody>().AddForce(300f * direction);
             transform.forward = direction;
+            Invoke(nameof(EnableWeapons), 1f);
         }
+    }
+
+    private void EnableWeapons()
+    {
+        skin.weaponItem.SetActive(true);
     }
 }

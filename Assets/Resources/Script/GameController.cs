@@ -14,6 +14,7 @@ public class GameController : Singleton<GameController>
     public TextMeshProUGUI aliveText;
     public List<Bot> botInStage = new List<Bot>();
     public int gold;
+    public bool isStartGame = false;
 
     private int totalCharacter = 0;
     // Start is called before the first frame update
@@ -33,6 +34,11 @@ public class GameController : Singleton<GameController>
     void Update()
     {
         
+    }
+
+    public void InitPlayerItems()
+    {
+        player.skin.PlayerEquipItems();
     }
 
     public void StartGame()

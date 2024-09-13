@@ -44,8 +44,9 @@ public class UIManager : Singleton<UIManager>
 
     public void OpenShop()
     {
-        mainPanel.SetActive(false);
+        mainPanel.SetActive(true);
         shopPanel.SetActive(true);
+        CameraFollow.Instance.ChangeState(3);
     }
 
     public void OpenAwardUI(int gold)
@@ -74,5 +75,6 @@ public class UIManager : Singleton<UIManager>
         {
             indicatorPanel.SetActive(false);
         }
+        CameraFollow.Instance.ChangeState(state);
     }
 }
