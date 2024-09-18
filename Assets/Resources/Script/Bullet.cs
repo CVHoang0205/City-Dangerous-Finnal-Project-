@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, 1f + 0.05f + self.level);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -23,7 +23,6 @@ public class CameraFollow : Singleton<CameraFollow>
     {
         gameCamera = GetComponent<Camera>();
         ChangeState(1);
-
     }
 
     private void LateUpdate()
@@ -34,6 +33,8 @@ public class CameraFollow : Singleton<CameraFollow>
 
     public void ChangeState(int state)
     {
+        rotationMainMenu = Quaternion.Euler(10f, 180f, 0f);
+        rotation = Quaternion.Euler(40f, 0f, 0f);
         if (state == 1)
         {
             currentOffset = offsetMainMenu;
@@ -49,5 +50,9 @@ public class CameraFollow : Singleton<CameraFollow>
             currentOffset = offsetShop;
             currentRotation = rotationMainMenu;
         }
+
+        Debug.Log("State Changed: " + state);
+        Debug.Log("Offset: " + currentOffset);
+        Debug.Log("Rotation: " + currentRotation);
     }
 }
