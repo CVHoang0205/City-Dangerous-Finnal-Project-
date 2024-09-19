@@ -51,8 +51,8 @@ public class CameraFollow : Singleton<CameraFollow>
             currentRotation = rotationMainMenu;
         }
 
-        Debug.Log("State Changed: " + state);
-        Debug.Log("Offset: " + currentOffset);
-        Debug.Log("Rotation: " + currentRotation);
+        //Debug.Log("State Changed: " + state);
+        //Debug.Log("Offset: " + currentOffset);
+        //Debug.Log("Rotation: " + currentRotation);
     }
 }

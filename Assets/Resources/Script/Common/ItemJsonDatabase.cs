@@ -21,7 +21,7 @@ public class ItemJsonDatabase : Singleton<ItemJsonDatabase>
     {
         LoadResourceFromTxt();
         ConstructDatabase();
-        LoadDataFromLocalDB();
+        LoadDataFromLocalDB();  
     }
 
     private void InitUserStats()
@@ -33,11 +33,14 @@ public class ItemJsonDatabase : Singleton<ItemJsonDatabase>
         {
             if (listItemInGame[i].IsEquip == true)
             {
+                Debug.Log("Equipped Item: " + listItemInGame[i].item.Type + " | ATK: " + listItemInGame[i].item.Atk);
+
                 userStats.Atk += listItemInGame[i].item.Atk;
                 userStats.Def += listItemInGame[i].item.Def;
                 userStats.Speed += listItemInGame[i].item.Spd;
             }
         }
+        Debug.Log("Final ATK: " + userStats.Atk);
         ShopController.Instance.InitUserStats();
     }
 

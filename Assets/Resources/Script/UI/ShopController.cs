@@ -22,14 +22,14 @@ public class ShopController : Singleton<ShopController>
         listButton[2].onClick.AddListener(() => ClickButtonType(2));
         listButton[3].onClick.AddListener(() => ClickButtonType(3));
 
-        //InitUserStats();
+        InitUserStats();
     }
 
     public void InitUserStats()
     {
-        //userStats[0].text = "ATK: " + ItemJsonDatabase.Instance.userStats.Atk;
-        //userStats[1].text = "DEF: " + ItemJsonDatabase.Instance.userStats.Def;
-        //userStats[2].text = "SPD: " + ItemJsonDatabase.Instance.userStats.Speed;
+        userStats[0].text = "ATK: " + ItemJsonDatabase.Instance.userStats.Atk;
+        userStats[1].text = "DEF: " + ItemJsonDatabase.Instance.userStats.Def;
+        userStats[2].text = "SPD: " + ItemJsonDatabase.Instance.userStats.Speed;
     }
 
     private void ClickButtonType(int type)
