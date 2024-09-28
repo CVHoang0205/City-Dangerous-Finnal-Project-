@@ -15,7 +15,7 @@ public class CharacterRange : MonoBehaviour
     {
         for(int i = 0; i < charsInCircle.Count; i++)
         {
-            if (charsInCircle[i] == null || !charsInCircle[i].CompareTag("Char"))
+            if (charsInCircle[i] == null)
             {
                 charsInCircle.Remove(charsInCircle[i]);
             }

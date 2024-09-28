@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,8 @@ public class Player : Character
 {
     Vector3 nextPoint;
     public LayerMask groundLayer;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,10 @@ public class Player : Character
         else
         {
             ChangeAnim("idle");
-            Throw();
+            if (range.charsInCircle.Count > 0) 
+            {
+                ThrowOfPlayer();
+            }
         }
     }
 
@@ -34,5 +39,11 @@ public class Player : Character
     {
         RaycastHit hit;
         return Physics.Raycast(points + Vector3.up * 2, Vector3.down, out hit, groundLayer);
+    }
+
+    //Tất công của Player sau 3s
+    private void ThrowOfPlayer() 
+    {
+        Invoke(nameof(Throw), 2f);
     }
 }

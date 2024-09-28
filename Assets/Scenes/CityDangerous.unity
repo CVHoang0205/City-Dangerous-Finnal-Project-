@@ -1098,6 +1098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Optimieze2
       objectReference: {fileID: 0}
+    - target: {fileID: 4751576142937199841, guid: a321e32e1c284d447970306c3d83d8f6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 8623166829871294194, guid: a321e32e1c284d447970306c3d83d8f6,
         type: 3}
       propertyPath: m_LocalPosition.x
