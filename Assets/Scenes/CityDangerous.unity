@@ -4381,7 +4381,7 @@ MonoBehaviour:
     type: 3}
   aliveText: {fileID: 1059146052}
   botInStage: []
-  gold: 500
+  gold: 0
   isStartGame: 0
 --- !u!114 &1144727560
 MonoBehaviour:
@@ -4724,7 +4724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1236322656
 RectTransform:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class TargetIndicator : MonoBehaviour
     public TextMeshProUGUI nameText;
     public Camera Camera => CameraFollow.Instance.gameCamera;
 
-    private float indicatorY = 1f;
+    private float indicatorY = -20f;
 
     Vector3 viewPoint;
     Vector3 screenHalf = new Vector2(Screen.width, Screen.height) / 2;
@@ -25,7 +25,7 @@ public class TargetIndicator : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        viewPoint = Camera.WorldToViewportPoint(character.transform.position + Vector3.forward * indicatorY);
+        viewPoint = Camera.WorldToViewportPoint(character.transform.position + Vector3.up * indicatorY);
         GetComponent<RectTransform>().anchoredPosition = Camera.ViewportToScreenPoint(viewPoint) - screenHalf;
     }
 
@@ -39,6 +39,6 @@ public class TargetIndicator : MonoBehaviour
     public void InitTarget(int level)
     {
         levelText.text = level.ToString();
-        indicatorY = 1f + level * 0.3f;
+        indicatorY = -20f + level * 0.3f;
     }
 }
