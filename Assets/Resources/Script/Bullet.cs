@@ -15,8 +15,14 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Char") && other.GetComponent<Character>() != self)
         {
-            other.GetComponent<Character>().OnDeath();
-            self.GainLevel();   
+            //other.GetComponent<Character>().OnDeath();
+            Character targetCharacter = other.GetComponent<Character>();
+            targetCharacter.OnHit(ItemJsonDatabase.Instance.GetEquippedWeaponAtk());
+            if (targetCharacter.IsDeath)
+            {
+                self.GainLevel();
+            }
+            //self.GainLevel();   
             Destroy(gameObject);
         }
     }

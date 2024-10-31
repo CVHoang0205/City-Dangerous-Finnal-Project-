@@ -50,6 +50,7 @@ public class Bot : Character
     {
         yield return new WaitForSeconds(2f);
         Destroy(indicator.gameObject);
+        Destroy(healthBar.gameObject);
         Destroy(gameObject);
     }
 

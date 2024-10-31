@@ -51,7 +51,7 @@ public class InitSkin : MonoBehaviour
         if (idPants > 0)
         {
             InitPants(idPants - 1);
-        }
+        }   
     }
 
     public void RandomEquipItems()

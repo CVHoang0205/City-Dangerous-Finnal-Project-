@@ -43,11 +43,19 @@ public class Player : Character
     public override void OnInit()
     {
         this.enabled = true;
-        skin.PlayerEquipItems();
+        //skin.PlayerEquipItems();
+        StartCoroutine(WaitForDataAndEquipItems());
         isDeath = false;
         gameObject.tag = "Char";
         ChangeAnim("idle");
         indicator.InitTarget(Color.black, 1, "Player");
+        healthBar.InitHealthBar(100, Color.green);
+    }
+
+    private IEnumerator WaitForDataAndEquipItems()
+    {
+        yield return new WaitUntil(() => ItemJsonDatabase.Instance.isDataLoaded);
+        skin.PlayerEquipItems();
         base.OnInit();
     }
 

@@ -15,6 +15,8 @@ public class GameController : Singleton<GameController>
     public List<Bot> botInStage = new List<Bot>();
     public int gold;
     public bool isStartGame = false;
+    public Canvas healthBarCanvas;
+    public HealthBar healthBar;
 
     private int totalCharacter = 0;
     // Start is called before the first frame update
@@ -24,10 +26,15 @@ public class GameController : Singleton<GameController>
         player.indicator = playerIndicator;
         playerIndicator.character = player;
 
+        HealthBar playerHealthBar = Instantiate(healthBar, healthBarCanvas.transform);
+        player.healthBar = playerHealthBar;
+        playerHealthBar.character = player;
+
         SetUpCharacterInGame();
         totalCharacter = botInStage.Count + 1;
         InitTextAlive();
         InitGold();
+        //GainGold(500);
     }
 
     // Update is called once per frame
@@ -39,6 +46,7 @@ public class GameController : Singleton<GameController>
     public void InitPlayerItems()
     {
         player.skin.PlayerEquipItems();
+        player.bulletPrefabs = ItemDatabase.Instance.bullets[player.skin.weaponId];
     }
 
     public void StartGame()
@@ -90,6 +98,7 @@ public class GameController : Singleton<GameController>
         for(int i = 0; i < botInStage.Count; i++)
         {
             Destroy(botInStage[i].indicator.gameObject);
+            Destroy(botInStage[i].healthBar.gameObject);
             Destroy(botInStage[i].gameObject);
         }
         botInStage.Clear(); 
@@ -123,10 +132,14 @@ public class GameController : Singleton<GameController>
                 TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
                 bot.indicator = botIndicator;
                 botIndicator.character = bot;
+                HealthBar botHealthBar = Instantiate(healthBar, healthBarCanvas.transform);
+                bot.healthBar = botHealthBar;
+                botHealthBar.character = bot;
                 botInStage.Add(bot);
                 Color color = Random.ColorHSV();
                 string botName = GetRandomCharacterNames();
                 botIndicator.InitTarget(color, 1, botName);
+                botHealthBar.InitHealthBar(100, Color.red);
             }
         }
     }
