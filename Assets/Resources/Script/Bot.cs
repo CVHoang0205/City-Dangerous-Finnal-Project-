@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -87,4 +87,16 @@ public class Bot : Character
         agent.SetDestination(des);
         destination.y = 0f;
     }
+
+    //public void DestroyCoin()
+    //{
+    //    if(Coin != null)
+    //    {
+    //        Destroy(Coin.gameObject);
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("Coin không tồn tại trong scene hoặc đã bị hủy.");
+    //    }
+    //}
 }

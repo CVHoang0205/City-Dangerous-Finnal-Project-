@@ -19,7 +19,8 @@ public class GameController : Singleton<GameController>
     public HealthBar healthBar;
     public int totalBot = 20;
     public int spawnBot = 0;
-    public List<Transform> listBottransform = new List<Transform>();
+    public List<Transform> listSpawn = new List<Transform>();
+    public List<MoveCar> cars = new List<MoveCar>();
 
     private int totalCharacter = 0;
     // Start is called before the first frame update
@@ -68,6 +69,11 @@ public class GameController : Singleton<GameController>
         DeleteAllBots();
         player.OnDespawn();
         SetUpCharacterInGame();
+        foreach(MoveCar car in cars)
+        {
+            car.ResetPosition();
+        }
+        DestroyAllCoins();
     }
 
     public void InitGold()
@@ -123,39 +129,16 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    private void SetUpCharacterInGame()
-    {
-        player.OnInit();
-        for (int i = 0; i < botNumber; i++)
-        {
-            NavMeshHit hit;
-            Vector3 point = new Vector3(Random.Range(-40f, 40f), 0f, Random.Range(-40f, 40f));
-            if (NavMesh.SamplePosition(point, out hit, 2.0f, NavMesh.AllAreas))
-            {
-                Bot bot = Instantiate(botPrefabs, hit.position, Quaternion.identity);
-                TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
-                bot.indicator = botIndicator;
-                botIndicator.character = bot;
-                HealthBar botHealthBar = Instantiate(healthBar, healthBarCanvas.transform);
-                bot.healthBar = botHealthBar;
-                botHealthBar.character = bot;
-                botInStage.Add(bot);
-                Color color = Random.ColorHSV();
-                string botName = GetRandomCharacterNames();
-                botIndicator.InitTarget(color, 1, botName);
-                botHealthBar.InitHealthBar(100, Color.red);
-            }
-        }
-    }
-
-    //IEnumerator SetUpCharacterInGame()
+    //private void SetUpCharacterInGame()
     //{
     //    player.OnInit();
-    //    while (spawnBot < totalBot) {
-    //        for (int i = 0; i < listBottransform.Count; i++)
+    //    for (int i = 0; i < botNumber; i++)
+    //    {
+    //        NavMeshHit hit;
+    //        Vector3 point = new Vector3(Random.Range(-40f, 40f), 0f, Random.Range(-40f, 40f));
+    //        if (NavMesh.SamplePosition(point, out hit, 2.0f, NavMesh.AllAreas))
     //        {
-    //            Bot bot = Instantiate(botPrefabs, listBottransform[i].transform.position, Quaternion.identity);
-    //            spawnBot++;
+    //            Bot bot = Instantiate(botPrefabs, hit.position, Quaternion.identity);
     //            TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
     //            bot.indicator = botIndicator;
     //            botIndicator.character = bot;
@@ -167,10 +150,39 @@ public class GameController : Singleton<GameController>
     //            string botName = GetRandomCharacterNames();
     //            botIndicator.InitTarget(color, 1, botName);
     //            botHealthBar.InitHealthBar(100, Color.red);
-    //            yield return new WaitForSeconds(5f);
     //        }
-    //    }   
+    //    }
     //}
+
+    private void SetUpCharacterInGame()
+    {
+        player.transform.position = listSpawn[listSpawn.Count - 1].position;
+        player.OnInit();
+        for (int i = 0; i < botNumber; i++)
+        {
+            Bot bot = Instantiate(botPrefabs, listSpawn[i].position, Quaternion.identity);
+            TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
+            bot.indicator = botIndicator;
+            botIndicator.character = bot;
+            HealthBar botHealthBar = Instantiate(healthBar, healthBarCanvas.transform);
+            bot.healthBar = botHealthBar;
+            botHealthBar.character = bot;
+            botInStage.Add(bot);
+            Color color = Random.ColorHSV();
+            string botName = GetRandomCharacterNames();
+            botIndicator.InitTarget(color, 1, botName);
+            botHealthBar.InitHealthBar(100, Color.red);
+        }
+    }
+
+    public void DestroyAllCoins()
+    {
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        foreach (GameObject coin in coins)
+        {
+            Destroy(coin);  
+        }
+    }
 
     private string GetRandomCharacterNames()
     {

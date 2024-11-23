@@ -23,6 +23,13 @@ public class MoveCar : MonoBehaviour
     public enum CarType { CarOne, CarTwo, CarThree }
     public CarType carType; // Biến công khai để chọn loại xe
 
+    private Vector3 initialPosition;
+
+    private void Start()
+    {
+        initialPosition = transform.position; //Lưu vị trí ban đầu của xe
+    }
+
     // Update được gọi mỗi khung hình
     void Update()
     {
@@ -147,8 +154,6 @@ public class MoveCar : MonoBehaviour
         // Vẽ đường ray để debug
         Debug.DrawLine(frontPosition, frontPosition + transform.forward * rayDistance2, Color.red);
 
-
-
         // Bắn raycast từ vị trí phía trước của xe
         RaycastHit hit;
         if (Physics.Raycast(frontPosition, transform.forward, out hit, rayDistance2, carObstacle))
@@ -170,12 +175,24 @@ public class MoveCar : MonoBehaviour
         return false;
     }
 
-    //private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Char"))
+        {
+            Debug.Log("Da va cham voi nhan vat");
+            Character charater = other.GetComponent<Character>();
+            if (charater != null && !charater.isDeath)
+            {
+                charater.OnDeath();
+            }
+        }
+    }
+
+    //private void OnCollisionEnter(Collision collision)
     //{
-    //    if (other.CompareTag("Char"))
+    //    if (collision.collider.CompareTag("Char"))
     //    {
-    //        Debug.Log("Da va cham voi nhan vat");
-    //        Character charater = other.GetComponent<Character>();
+    //        Character charater = collision.collider.GetComponent<Character>();
     //        if (charater != null && !charater.isDeath)
     //        {
     //            charater.OnDeath();
@@ -183,16 +200,10 @@ public class MoveCar : MonoBehaviour
     //    }
     //}
 
-    private void OnCollisionEnter(Collision collision)
+    public void ResetPosition()
     {
-        if (collision.collider.CompareTag("Char"))
-        {
-            Debug.Log("Đã va chạm với nhân vật bằng Collision!");
-            Character charater = collision.collider.GetComponent<Character>();
-            if (charater != null && !charater.isDeath)
-            {
-                charater.OnDeath();
-            }
-        }
+        transform.position = initialPosition;
+        isStopped = false;
+        Debug.Log("Reset Car");
     }
 }
