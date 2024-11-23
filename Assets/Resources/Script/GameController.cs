@@ -17,6 +17,9 @@ public class GameController : Singleton<GameController>
     public bool isStartGame = false;
     public Canvas healthBarCanvas;
     public HealthBar healthBar;
+    public int totalBot = 20;
+    public int spawnBot = 0;
+    public List<Transform> listBottransform = new List<Transform>();
 
     private int totalCharacter = 0;
     // Start is called before the first frame update
@@ -31,6 +34,7 @@ public class GameController : Singleton<GameController>
         playerHealthBar.character = player;
 
         SetUpCharacterInGame();
+        //StartCoroutine(SetUpCharacterInGame());
         totalCharacter = botInStage.Count + 1;
         InitTextAlive();
         InitGold();
@@ -122,11 +126,11 @@ public class GameController : Singleton<GameController>
     private void SetUpCharacterInGame()
     {
         player.OnInit();
-        for(int i = 0; i < botNumber; i++)
+        for (int i = 0; i < botNumber; i++)
         {
             NavMeshHit hit;
             Vector3 point = new Vector3(Random.Range(-40f, 40f), 0f, Random.Range(-40f, 40f));
-            if(NavMesh.SamplePosition(point, out hit, 2.0f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(point, out hit, 2.0f, NavMesh.AllAreas))
             {
                 Bot bot = Instantiate(botPrefabs, hit.position, Quaternion.identity);
                 TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
@@ -143,6 +147,30 @@ public class GameController : Singleton<GameController>
             }
         }
     }
+
+    //IEnumerator SetUpCharacterInGame()
+    //{
+    //    player.OnInit();
+    //    while (spawnBot < totalBot) {
+    //        for (int i = 0; i < listBottransform.Count; i++)
+    //        {
+    //            Bot bot = Instantiate(botPrefabs, listBottransform[i].transform.position, Quaternion.identity);
+    //            spawnBot++;
+    //            TargetIndicator botIndicator = Instantiate(indicator, indicatorCanvas.transform);
+    //            bot.indicator = botIndicator;
+    //            botIndicator.character = bot;
+    //            HealthBar botHealthBar = Instantiate(healthBar, healthBarCanvas.transform);
+    //            bot.healthBar = botHealthBar;
+    //            botHealthBar.character = bot;
+    //            botInStage.Add(bot);
+    //            Color color = Random.ColorHSV();
+    //            string botName = GetRandomCharacterNames();
+    //            botIndicator.InitTarget(color, 1, botName);
+    //            botHealthBar.InitHealthBar(100, Color.red);
+    //            yield return new WaitForSeconds(5f);
+    //        }
+    //    }   
+    //}
 
     private string GetRandomCharacterNames()
     {

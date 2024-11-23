@@ -6,6 +6,7 @@ public class Player : Character
 {
     Vector3 nextPoint;
     public LayerMask groundLayer;
+    public int gold;
 
     private CounterTime counter = new CounterTime();
     // Start is called before the first frame update
@@ -92,12 +93,22 @@ public class Player : Character
         counter.Cancel();
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Coin"))
+    //    {
+    //        Debug.Log("Cham coin");
+    //        Destroy(other.gameObject);
+    //    }
+    //}
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Coin"))
+        if (collision.collider.CompareTag("Coin"))
         {
             Debug.Log("Cham coin");
-            Destroy(other.gameObject);
+            GameController.Instance.GainGold(1);
+            Destroy(collision.collider.gameObject);
         }
     }
 }
