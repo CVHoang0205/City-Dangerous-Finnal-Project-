@@ -129,8 +129,11 @@ MonoBehaviour:
   indicator: {fileID: 0}
   level: 1
   skin: {fileID: 7127363068512388210}
+  healthBar: {fileID: 0}
+  bulletPrefabs: {fileID: 0}
   agent: {fileID: 2359521745104987660}
   destination: {x: 0, y: 0, z: 0}
+  Coin: {fileID: 3129200342344496425, guid: 3e29573f06c0a7e4fa986fff41de17af, type: 3}
 --- !u!195 &2359521745104987660
 NavMeshAgent:
   m_ObjectHideFlags: 0

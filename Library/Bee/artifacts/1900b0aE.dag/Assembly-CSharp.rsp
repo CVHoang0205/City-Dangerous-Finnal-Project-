@@ -375,6 +375,7 @@
 "Assets/Resources/Script/Bot.cs"
 "Assets/Resources/Script/Bullet.cs"
 "Assets/Resources/Script/CameraFollow.cs"
+"Assets/Resources/Script/Car/MoveCar.cs"
 "Assets/Resources/Script/Character.cs"
 "Assets/Resources/Script/CharacterRange.cs"
 "Assets/Resources/Script/Common/AbtractCharacter.cs"

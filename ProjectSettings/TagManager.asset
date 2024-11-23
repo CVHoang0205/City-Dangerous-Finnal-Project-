@@ -8,6 +8,8 @@ TagManager:
   - Boss
   - Bullet
   - Char
+  - Coin
+  - Body
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Char
-  - 
+  - CarObstacle
   - 
   - 
   - 

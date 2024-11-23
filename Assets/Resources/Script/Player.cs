@@ -91,4 +91,13 @@ public class Player : Character
     {
         counter.Cancel();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            Debug.Log("Cham coin");
+            Destroy(other.gameObject);
+        }
+    }
 }

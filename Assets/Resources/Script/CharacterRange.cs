@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterRange : MonoBehaviour
 {
     public List<Character> charsInCircle = new List<Character>();
+    public bool isPlayerInRange;
     // Start is called before the first frame update
     void Start()
     {
