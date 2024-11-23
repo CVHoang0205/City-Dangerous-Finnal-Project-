@@ -1407,7 +1407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890aaa1afa55bc74aab688be843d21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
   speed: 5
   xMin: -39
   xMax: 41.74007
@@ -1418,6 +1417,33 @@ MonoBehaviour:
     m_Bits: 128
   frontOffset: 5
   carType: 2
+--- !u!54 &597535231
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597535225}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &635310655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7921119078207993522, guid: a20a6ac3041e079449b0078ab70c1679,
@@ -1436,7 +1462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890aaa1afa55bc74aab688be843d21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
   speed: 5
   xMin: -39
   xMax: 41.74007
@@ -1447,6 +1472,33 @@ MonoBehaviour:
     m_Bits: 128
   frontOffset: 5
   carType: 2
+--- !u!54 &635310661
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635310655}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &662295920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4472,7 +4524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890aaa1afa55bc74aab688be843d21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
   speed: 5
   xMin: -39
   xMax: 41.74007
@@ -4483,6 +4534,33 @@ MonoBehaviour:
     m_Bits: 128
   frontOffset: 5
   carType: 0
+--- !u!54 &1136149543
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136149537}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1140542031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890aaa1afa55bc74aab688be843d21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
   speed: 5
   xMin: -39
   xMax: 41.74007
@@ -4591,6 +4668,33 @@ MonoBehaviour:
     m_Bits: 128
   frontOffset: 5
   carType: 2
+--- !u!54 &1142155713
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142155707}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1144727557
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,7 +5770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890aaa1afa55bc74aab688be843d21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
   speed: 5
   xMin: -39
   xMax: 41.74007
@@ -5677,6 +5780,33 @@ MonoBehaviour:
     m_Bits: 128
   frontOffset: 5
   carType: 1
+--- !u!54 &1459810169
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459810163}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1599517481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6338,7 +6468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890aaa1afa55bc74aab688be843d21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
   speed: 5
   xMin: -39
   xMax: 41.74007
@@ -6349,6 +6478,33 @@ MonoBehaviour:
     m_Bits: 128
   frontOffset: 5
   carType: 0
+--- !u!54 &1962827180
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962827174}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2090575436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,6 +7234,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7919659870133316766, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7919659870385270369, guid: a20a6ac3041e079449b0078ab70c1679,
         type: 3}
       propertyPath: m_Layer
@@ -7306,26 +7467,50 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 635310658}
+    - targetCorrespondingSourceObject: {fileID: 7921119078207993522, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 635310661}
     - targetCorrespondingSourceObject: {fileID: 7920956832870613883, guid: a20a6ac3041e079449b0078ab70c1679,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1142155710}
+    - targetCorrespondingSourceObject: {fileID: 7920956832870613883, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1142155713}
     - targetCorrespondingSourceObject: {fileID: 7920588378656848690, guid: a20a6ac3041e079449b0078ab70c1679,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1459810166}
+    - targetCorrespondingSourceObject: {fileID: 7920588378656848690, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1459810169}
     - targetCorrespondingSourceObject: {fileID: 7921639615303377720, guid: a20a6ac3041e079449b0078ab70c1679,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1962827177}
+    - targetCorrespondingSourceObject: {fileID: 7921639615303377720, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1962827180}
     - targetCorrespondingSourceObject: {fileID: 7920623576605644954, guid: a20a6ac3041e079449b0078ab70c1679,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1136149540}
+    - targetCorrespondingSourceObject: {fileID: 7920623576605644954, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1136149543}
     - targetCorrespondingSourceObject: {fileID: 7921279243541424746, guid: a20a6ac3041e079449b0078ab70c1679,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 597535228}
+    - targetCorrespondingSourceObject: {fileID: 7921279243541424746, guid: a20a6ac3041e079449b0078ab70c1679,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 597535231}
   m_SourcePrefab: {fileID: 100100000, guid: a20a6ac3041e079449b0078ab70c1679, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
