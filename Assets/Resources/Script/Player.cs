@@ -6,7 +6,9 @@ public class Player : Character
 {
     Vector3 nextPoint;
     public LayerMask groundLayer;
-    public int gold;
+
+    private int gold = 2;
+    public int totalGold;
 
     private CounterTime counter = new CounterTime();
     // Start is called before the first frame update
@@ -51,6 +53,7 @@ public class Player : Character
         ChangeAnim("idle");
         indicator.InitTarget(Color.black, 1, "Player");
         healthBar.InitHealthBar(100, Color.green);
+        totalGold = 0;
     }
 
     private IEnumerator WaitForDataAndEquipItems()
@@ -63,6 +66,7 @@ public class Player : Character
     public void AttackTarget()
     {
         isAttack = true;
+        SoundManager.Instance.PlayOneShotMusic(SoundList.Shot);
         Invoke(nameof(ChangeIsAttack), 1.5f);
         ChangeAnim("attack");
         counter.Start(OnAttack, 0.3f);
@@ -78,7 +82,8 @@ public class Player : Character
         counter.Cancel();
         GameController.Instance.EndGame();  
         this.enabled = false;
-        UIManager.Instance.OpenAwardUI(level);
+        UIManager.Instance.OpenAwardUI(level, totalGold);
+        SoundManager.Instance.PlayOneShotMusic(SoundList.Dead);
         base.OnDeath();
     }
 
@@ -106,8 +111,9 @@ public class Player : Character
     {
         if (collision.collider.CompareTag("Coin"))
         {
-            Debug.Log("Cham coin");
-            GameController.Instance.GainGold(1);
+            totalGold += gold;
+            GameController.Instance.GainGold(gold);
+            
             Destroy(collision.collider.gameObject);
         }
     }

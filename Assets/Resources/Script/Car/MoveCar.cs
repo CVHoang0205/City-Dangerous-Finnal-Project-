@@ -179,7 +179,6 @@ public class MoveCar : MonoBehaviour
     {
         if (other.CompareTag("Char"))
         {
-            Debug.Log("Da va cham voi nhan vat");
             Character charater = other.GetComponent<Character>();
             if (charater != null && !charater.isDeath)
             {
@@ -204,6 +203,5 @@ public class MoveCar : MonoBehaviour
     {
         transform.position = initialPosition;
         isStopped = false;
-        Debug.Log("Reset Car");
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,7 +18,7 @@ public class GameController : Singleton<GameController>
     public Canvas healthBarCanvas;
     public HealthBar healthBar;
     public int totalBot = 20;
-    public int spawnBot = 0;
+    //public int spawnBot = 0;
     public List<Transform> listSpawn = new List<Transform>();
     public List<MoveCar> cars = new List<MoveCar>();
 
@@ -40,6 +40,19 @@ public class GameController : Singleton<GameController>
         InitTextAlive();
         InitGold();
         //GainGold(500);
+    }
+
+    void Awake()
+    {
+        // Kiểm tra và tải giá trị âm lượng khi game khởi động
+        if (!PlayerPrefs.HasKey("musicVolume"))
+        {
+            PlayerPrefs.SetFloat("musicVolume", 1.0f); // Mặc định là 100% âm lượng
+        }
+
+        // Áp dụng giá trị âm lượng đã lưu
+        float savedVolume = PlayerPrefs.GetFloat("musicVolume");
+        AudioListener.volume = savedVolume;
     }
 
     // Update is called once per frame
@@ -125,7 +138,8 @@ public class GameController : Singleton<GameController>
         aliveText.text = "Alive: " + totalCharacter;
         if(totalCharacter == 1)
         {
-            UIManager.Instance.OpenAwardUI(player.level);
+            UIManager.Instance.OpenAwardUI(player.level, player.totalGold);
+            SoundManager.Instance.PlayOneShotMusic(SoundList.Win);
         }
     }
 
