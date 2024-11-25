@@ -60,13 +60,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.27f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Script\Common\ChangeVolume.cs" />
     <Compile Include="Assets\Resources\Script\HealthBar.cs" />
     <Compile Include="Assets\Resources\Script\Player.cs" />
     <Compile Include="Assets\Resources\Script\Common\ItemJsonDatabase.cs" />
+    <Compile Include="Assets\Resources\Script\Sound\ChangeVolume.cs" />
     <Compile Include="Assets\Resources\Script\CharacterRange.cs" />
     <Compile Include="Assets\Resources\Script\Common\AbtractCharacter.cs" />
-    <Compile Include="Assets\Resources\Script\Common\SoundManager.cs" />
     <Compile Include="Assets\Resources\Script\Item\ItemDatabase.cs" />
     <Compile Include="Assets\Resources\Script\UI\Award.cs" />
     <Compile Include="Assets\Resources\Script\StateMachine\IdleState.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="Assets\Resources\Script\Item\InitSkin.cs" />
     <Compile Include="Assets\Resources\Script\GameController.cs" />
     <Compile Include="Assets\Resources\Script\TargetIndicator.cs" />
+    <Compile Include="Assets\Resources\Script\Sound\SoundManager.cs" />
     <Compile Include="Assets\Resources\Script\CameraFollow.cs" />
     <Compile Include="Assets\Resources\Script\Common\Singleton.cs" />
     <Compile Include="Assets\Resources\Script\UI\UIManager.cs" />
