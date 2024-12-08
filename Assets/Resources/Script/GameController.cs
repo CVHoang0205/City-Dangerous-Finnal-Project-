@@ -17,7 +17,7 @@ public class GameController : Singleton<GameController>
     public bool isStartGame = false;
     public Canvas healthBarCanvas;
     public HealthBar healthBar;
-    public int totalBot = 20;
+    //public int totalBot = 20;
     //public int spawnBot = 0;
     public List<Transform> listSpawn = new List<Transform>();
     public List<MoveCar> cars = new List<MoveCar>();
@@ -39,7 +39,7 @@ public class GameController : Singleton<GameController>
         totalCharacter = botInStage.Count + 1;
         InitTextAlive();
         InitGold();
-        //GainGold(500);
+        //GainGold(200);
     }
 
     void Awake()
@@ -53,12 +53,6 @@ public class GameController : Singleton<GameController>
         // Áp dụng giá trị âm lượng đã lưu
         float savedVolume = PlayerPrefs.GetFloat("musicVolume");
         AudioListener.volume = savedVolume;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void InitPlayerItems()

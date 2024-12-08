@@ -63,7 +63,7 @@ public class ItemJsonDatabase : Singleton<ItemJsonDatabase>
                 userStats.Speed += listItemInGame[i].item.Spd;
             }
         }
-        //Debug.Log("Final ATK: " + userStats.Atk);
+        Debug.Log("Final ATK: " + userStats.Atk);
         ShopController.Instance.InitUserStats();
     }
 

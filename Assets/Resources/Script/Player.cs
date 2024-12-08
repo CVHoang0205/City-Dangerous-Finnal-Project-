@@ -113,7 +113,6 @@ public class Player : Character
         {
             totalGold += gold;
             GameController.Instance.GainGold(gold);
-            
             Destroy(collision.collider.gameObject);
         }
     }
